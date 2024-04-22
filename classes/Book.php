@@ -55,7 +55,7 @@ class Book {
 
     public function getReleaseDate()
     {
-        return $this->releaseDate;
+        return $this->releaseDate->format("Y");
     }
 
     public function setReleaseDate($releaseDate)

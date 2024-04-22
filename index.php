@@ -15,9 +15,10 @@ $pedagogie = new Genre(0, "Pedagogie");
 
 
 $book1 = new Book(0, "Le codage en s'amusant", "2010-01-01", 185, "Le livre parfait pour découvrir le codage en s'amusant !", 18, $stephane, $pedagogie);
+$book2 = new Book(1, "Le codage pour les gros nullos", "2020-01-01", 242, "Le livre parfait pour apprendre le codage quand on est un gros nullos", 22, $stephane, $pedagogie);
 
+echo $stephane->getBibliography();
 
-$stephane->getBibliography();
 
 
 

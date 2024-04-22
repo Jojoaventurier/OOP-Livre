@@ -86,12 +86,12 @@ class Author {
     }
 
     public function getBibliography() {
-        echo "<h2>Livres de ".$this."</h2>";
+        $result ="<h2>Livres de ".$this."</h2>";
 
         foreach ($this->booksWritten as $bookWritten) {
-           echo $this->getBookName() ;
+           $result .= $bookWritten->getBookName() . " (". $bookWritten->getReleaseDate(). ")<br>";
         }
-
+        return $result;
     }
 
     public function __toString() {
