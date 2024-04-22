@@ -98,7 +98,4 @@ class Author {
         return $this->firstName . " " . $this->lastName . " " ;
     }
 
-
-    //créer une fonction pour afficher la bibliographie de l'auteur
-
 }
