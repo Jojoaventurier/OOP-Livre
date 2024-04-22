@@ -8,19 +8,19 @@ class Book {
     private DateTime $releaseDate;
     private int $nbOfPages;
     private string $summary;
-    private Autor $autor;
+    private Author $author;
     private Genre $genre;
 
 
-    public function __construct (int $idBook, string $bookName, string $releaseDate, int $nbOfPages, string $summary, Autor $autor, Genre $genre) {
+    public function __construct (int $idBook, string $bookName, string $releaseDate, int $nbOfPages, string $summary, Author $author, Genre $genre) {
         $this->idBook = $idBook;
         $this->bookName = $bookName;
-        $this->releaseDate = $releaseDate;
+        $this->releaseDate = new Datetime($releaseDate);
         $this->nbOfPages = $nbOfPages;
         $this->summary = $summary;
-        $this->autor = $autor;
+        $this->author = $author;
         $this->genre = $genre;
-        $this->autor = addBook($this);
+        $this->author = addBook($this);
         $this->genre = addBook($this);
     }
 
@@ -84,14 +84,14 @@ class Book {
         return $this;
     }
 
-    public function getAutor()
+    public function getAuthor()
     {
-        return $this->autor;
+        return $this->author;
     }
 
-    public function setAutor($autor)
+    public function setAuthor($author)
     {
-        $this->autor = $autor;
+        $this->author = $author;
 
         return $this;
     }

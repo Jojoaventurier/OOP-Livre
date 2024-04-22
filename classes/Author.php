@@ -1,22 +1,22 @@
 <?php
 
 
-class Autor {
+class Author {
 
-    private int $idAutor;
+    private int $idAuthor;
     private string $firstName;
     private string $lastName;
     private string $sexe;
-    private DateTime $birthDate;
+    private DateTime $birthDay;
     private array $booksWritten;
 
-    public function __construct(int $idAutor, string $firstName, string $lastName, string $sexe, string $birthDate) {
-        $this->idAutor = $idAutor;
+    public function __construct(int $idAuthor, string $firstName, string $lastName, string $sexe, string $birthDate) {
+        $this->idAuthor = $idAuthor;
         $this->firstName = $firstName;
         $this->lastName = $lastName;
         $this->sexe = $sexe;
-        $this->birthDate = $birthDate;
-        $this->booksWritten = $booksWritten = [];
+        $this->birthDate = new DateTime($birthDate) ;
+        $this->booksWritten = [];
     }
 
     public function getFirstName()
@@ -82,6 +82,7 @@ class Autor {
     public function addBook(Book $bookWritten) 
     {
         $this->booksWritten[] = $bookWritten;
+        array_push();
     }
 
     public function __toString() {
