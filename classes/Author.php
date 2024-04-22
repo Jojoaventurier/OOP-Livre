@@ -89,7 +89,7 @@ class Author {
         $result ="<h2>Livres de ".$this."</h2>";
 
         foreach ($this->booksWritten as $bookWritten) {
-           $result .= $bookWritten->getBookName() . " (". $bookWritten->getReleaseDate(). ")<br>";
+           $result .= $bookWritten->getBookName() . " (". $bookWritten->getReleaseDate(). ") : ". $bookWritten->getNbOfPages() ." pages / ". $bookWritten->getPrice() ."€ <br>";
         }
         return $result;
     }
