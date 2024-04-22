@@ -85,8 +85,20 @@ class Author {
       
     }
 
+    public function getBibliography() {
+        echo "<h2>Livres de ".$this."</h2>";
+
+        foreach ($this->booksWritten as $bookWritten) {
+           echo $this->getBookName() ;
+        }
+
+    }
+
     public function __toString() {
         return $this->firstName . " " . $this->lastName . " " ;
     }
+
+
+    //créer une fonction pour afficher la bibliographie de l'auteur
 
 }

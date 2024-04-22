@@ -8,16 +8,18 @@ class Book {
     private DateTime $releaseDate;
     private int $nbOfPages;
     private string $summary;
+    private int $price;
     private Author $author;
     private Genre $genre;
 
 
-    public function __construct (int $idBook, string $bookName, string $releaseDate, int $nbOfPages, string $summary, Author $author, Genre $genre) {
+    public function __construct (int $idBook, string $bookName, string $releaseDate, int $nbOfPages, string $summary, int $price, Author $author, Genre $genre) {
         $this->idBook = $idBook;
         $this->bookName = $bookName;
         $this->releaseDate = new Datetime($releaseDate);
         $this->nbOfPages = $nbOfPages;
         $this->summary = $summary;
+        $this->price = $price;
         $this->author = $author;
         $author->addBook($this);
         $this->genre = $genre;
@@ -99,7 +101,20 @@ class Book {
         return $this;
     }
 
+    public function getPrice()
+    {
+        return $this->price;
+    }
+
+    public function setPrice($price)
+    {
+        $this->price = $price;
+
+        return $this;
+    }
+
     public function __toString() {
         return $this->bookName . " ";
     }
+
 }
