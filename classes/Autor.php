@@ -8,6 +8,7 @@ class Autor {
     private string $lastName;
     private string $sexe;
     private DateTime $birthDate;
+    private array $booksWritten;
 
     public function __construct(int $idAutor, string $firstName, string $lastName, string $sexe, string $birthDate) {
         $this->idAutor = $idAutor;
@@ -15,6 +16,7 @@ class Autor {
         $this->lastName = $lastName;
         $this->sexe = $sexe;
         $this->birthDate = $birthDate;
+        $this->booksWritten = $booksWritten = [];
     }
 
     public function getFirstName()
@@ -63,6 +65,23 @@ class Autor {
     $this->birthDate = $birthDate;
 
     return $this;
+    }
+
+    public function getBooksWritten()
+    {
+        return $this->booksWritten;
+    }
+
+    public function setBooksWritten($booksWritten)
+    {
+        $this->booksWritten = $booksWritten;
+
+        return $this;
+    }
+
+    public function addBook(Book $bookWritten) 
+    {
+        $this->booksWritten[] = $bookWritten;
     }
 
     public function __toString() {
