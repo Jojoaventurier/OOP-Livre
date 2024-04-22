@@ -3,14 +3,16 @@
 
 class Autor {
 
-private string $firstName;
-private string $lastName;
-private string $sexe;
-private DateTime $birthDate;
+    private int $idAutor;
+    private string $firstName;
+    private string $lastName;
+    private string $sexe;
+    private DateTime $birthDate;
 
-    public function __construct(string $firstName, string $lastName, string $sexe, string $birthDate) {
-        $this->firstname = $firstName;
-        $this->lastname = $lastName;
+    public function __construct(int $idAutor, string $firstName, string $lastName, string $sexe, string $birthDate) {
+        $this->idAutor = $idAutor;
+        $this->firstName = $firstName;
+        $this->lastName = $lastName;
         $this->sexe = $sexe;
         $this->birthDate = $birthDate;
     }
@@ -64,7 +66,7 @@ private DateTime $birthDate;
     }
 
     public function __toString() {
-        return $this->firstname . " " . $this->lastname . " " ;
+        return $this->firstName . " " . $this->lastName . " " ;
     }
 
 }
