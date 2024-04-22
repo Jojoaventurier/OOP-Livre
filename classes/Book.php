@@ -19,9 +19,12 @@ class Book {
         $this->nbOfPages = $nbOfPages;
         $this->summary = $summary;
         $this->author = $author;
+        $author->addBook($this);
         $this->genre = $genre;
-        $this->author = addBook($this);
-        $this->genre = addBook($this);
+        $genre->addBook($this);
+
+      
+     
     }
 
     public function getIdBook()

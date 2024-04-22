@@ -10,12 +10,12 @@ class Author {
     private DateTime $birthDay;
     private array $booksWritten;
 
-    public function __construct(int $idAuthor, string $firstName, string $lastName, string $sexe, string $birthDate) {
+    public function __construct(int $idAuthor, string $firstName, string $lastName, string $sexe, string $birthDay) {
         $this->idAuthor = $idAuthor;
         $this->firstName = $firstName;
         $this->lastName = $lastName;
         $this->sexe = $sexe;
-        $this->birthDate = new DateTime($birthDate) ;
+        $this->birthDate = new DateTime($birthDay) ;
         $this->booksWritten = [];
     }
 
@@ -82,7 +82,7 @@ class Author {
     public function addBook(Book $bookWritten) 
     {
         $this->booksWritten[] = $bookWritten;
-        array_push();
+      
     }
 
     public function __toString() {
